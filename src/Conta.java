@@ -21,21 +21,29 @@ public abstract class Conta implements IConta{
     }
 
     public double getSaldo() {
+
         return saldo;
+
+    }
+    protected void ImprimirInformacoesComuns() {
+        System.out.println(String.format("Agencia: %d" ,agencia));
+        System.out.println(String.format("Conta: %d" ,conta));
+        System.out.println(String.format("Saldo: %d" ,saldo));
     }
 
     @Override
     public void sacar(double valor) {
-
+        saldo -=valor;
     }
 
     @Override
     public void despositar(double valor) {
-
+        saldo += valor;
     }
 
     @Override
-    public void transferir(Conta Contadestino, double valor) {
-
+    public void transferir( double valor, Conta contaDestino) {
+        this.sacar(valor);
+        contaDestino.despositar(valor);
     }
 }
