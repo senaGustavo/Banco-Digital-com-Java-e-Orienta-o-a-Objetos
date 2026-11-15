@@ -1,8 +1,16 @@
 public abstract class Conta implements IConta{
 
-    public  int agencia;
-    public  int conta;
-    public  double saldo;
+    protected   static int AGENCIA_PADRAO = 1;
+    private  static int SEQUENCIAL = 1;
+
+    protected   int agencia;
+    protected   int conta;
+    protected   double saldo;
+
+    public Conta() {
+        this.agencia = Conta.AGENCIA_PADRAO;
+        this.conta = SEQUENCIAL++;
+    }
 
     public int getAgencia() {
         return agencia;
