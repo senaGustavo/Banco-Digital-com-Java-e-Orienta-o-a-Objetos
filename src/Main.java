@@ -2,10 +2,13 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Conta cc =  new ContaCorrente();
-        Conta poupanca =  new ContaPoupanca();
 
-        cc.ImprimirInformacoesComuns();
-        poupanca.ImprimirInformacoesComuns();
+        Cliente cliente = new Cliente();
+        Conta cc =  new ContaCorrente(cliente);
+        Conta poupanca =  new ContaPoupanca(cliente);
+
+        cliente.setNome("Gustavo");
+        cc.ImprimirExtrato();
+        poupanca.ImprimirExtrato();
     }
 }
