@@ -28,7 +28,7 @@ public abstract class Conta implements IConta{
     protected void ImprimirInformacoesComuns() {
         System.out.println(String.format("Agencia: %d" ,agencia));
         System.out.println(String.format("Conta: %d" ,conta));
-        System.out.println(String.format("Saldo: %d" ,saldo));
+        System.out.println(String.format("Saldo: %.2f" ,saldo));
     }
 
     @Override
